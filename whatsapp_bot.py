@@ -132,6 +132,6 @@ def whatsapp_reply():
 
 
 if __name__ == "__main__":
-    print("Starting WhatsApp farm bot on port 8080...")
-    print("Make sure ngrok is running and pointed at port 8080.")
-    app.run(port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    print(f"Starting WhatsApp farm bot on port {port}...")
+    app.run(host="0.0.0.0", port=port)
